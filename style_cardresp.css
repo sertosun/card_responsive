@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: bisque;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4em;
+  height: 100vh;
+  padding: 2em !important;
+}
+
+.grid_column {
+  width: 250px;
+}
+
+.grid_column h1,
+.grid_column p {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.grid_column h1 {
+  font-size: 2em;
+}
+
+.grid_column p {
+  font-size: 0.8em;
+}
+
+.card {
+  background-color: rgb(252, 199, 134);
+  display: flex;
+  flex-direction: column;
+
+  gap: 2em;
+  border: 1px solid black;
+  padding: 0.8em;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+}
+
+.card:hover {
+  box-shadow: -1px 0px 8px 3px #000000;
+  transform: scale(1.04);
+  transition: all 1s;
+}
+
+.card img {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.card_text {
+  margin-bottom: 1em;
+}
+
+.card_text p {
+  font-size: 0.6em;
+  text-align: center;
+  margin: 0;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*     display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: flex-end;  Lösung mit Grid */
+  width: 100%;
+  position: relative;
+}
+
+.btn {
+  border: none;
+  padding: 0.1em 0.8em;
+  border-radius: 0.2em;
+  background-color: rgb(255, 140, 0);
+  font-size: 0.8em;
+  /*  display: none; */
+  opacity: 0; /* Einfachste Lösung für den Button */
+  cursor: pointer;
+  transition: all 300ms; /* Vorteil von Opacity _> man kann mit transition arbeiten. */
+}
+
+.card:hover .btn {
+  /* padding: 0.1em 0.8em; */
+  /*  display: inline-block; */
+  opacity: 1; /* Button erscheinen lassen */
+  border: none;
+  background-color: rgb(255, 140, 0);
+}
+
+.bottom i {
+  color: rgb(255, 140, 0);
+  /*position: absolute;  
+  bottom: 0;
+  right: 0; */
+  /*   grid-column: 2/3 ; Lösung mit Grid
+*/
+  text-align: right;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.bottom i:hover {
+  color: turquoise;
+  transition: all 1s;
+}
+
+/* -----------RESPONSIVE------- */
+
+/* -----TABLET------ */
+
+@media screen and (max-width: 991px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* -----MOBILE------ */
+
+@media screen and (max-width: 575px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
